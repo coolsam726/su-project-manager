@@ -1,0 +1,254 @@
+@import '../../../../../vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+@layer base {
+    .fi-topbar {
+        nav {
+            @apply !bg-primary-50 dark:!bg-gray-800 !shadow-none !ring-0;
+        }
+    }
+
+    .fi-body {
+        @apply !bg-primary-50 dark:!bg-gray-800;
+    }
+
+    .fi-sidebar-item, .fi-topbar-item {
+        &.fi-active {
+            .fi-sidebar-item-button, .fi-topbar-item-button {
+                @apply bg-primary-600 border-l-4 border-l-info-500 text-white rounded-none rounded-tr-xl rounded-bl-xl;
+
+                .fi-sidebar-item-label, .fi-sidebar-item-icon, .fi-topbar-item-label, .fi-topbar-item-icon, .fi-topbar-group-toggle-icon, .fi-sidebar-group-toggle-icon {
+                    @apply text-white;
+                }
+
+                .fi-sidebar-item-icon, .fi-topbar-item-icon, .fi-topbar-group-toggle-icon, .fi-sidebar-group-toggle-icon {
+                    @apply text-info-500;
+                }
+            }
+        }
+    }
+
+    .fi-section {
+        .fi-section-content-ctn {
+            @apply border border-primary-500 dark:border-info-500 rounded-xl;
+        }
+
+        .fi-section-header + .fi-section-content-ctn {
+            @apply border-t-0 rounded-t-none;
+        }
+
+        .fi-section-header {
+            @apply bg-primary-100 border border-primary-500 dark:border-info-500 dark:bg-gray-800 rounded-t-xl;
+        }
+
+        .fi-section-header-heading {
+            @apply text-gray-950 dark:text-white font-bold;
+        }
+
+        .fi-section-header-description {
+            @apply text-gray-950 dark:text-white;
+        }
+
+        &.fi-collapsed {
+            .fi-section-header {
+                @apply rounded-xl;
+            }
+        }
+
+    }
+
+    .fi-input-wrp {
+        @apply !outline-primary-200 !outline-1 focus:!outline-2 focus:!outline-primary-500;
+    }
+
+    .fi-input-text {
+        @apply bg-primary text-white;
+    }
+
+    .fi-fo-wizard-header-step {
+        &.fi-active {
+            * {
+                @apply font-black;
+            }
+        }
+    }
+
+    .fi-ta-record {
+        @apply border border-primary-500 dark:border-info-500 !rounded-lg;
+        &.inactive {
+            @apply bg-danger-50 border-danger-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Inactive';
+                @apply bg-danger-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2 dark:bg-danger-500;
+            }
+        }
+        &.active {
+            @apply bg-success-50 border-success-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Active';
+                @apply bg-success-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2 dark:bg-success-500;
+            }
+        }
+
+        &.wrong {
+            @apply bg-danger-50 border-danger-500 dark:bg-gray-800;
+            &:before {
+                content: 'Wrong';
+                @apply bg-danger-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2 dark:bg-danger-500;
+            }
+        }
+        &.correct {
+            @apply bg-success-50 border-success-500 dark:bg-gray-800;
+            &:before {
+                content: 'Correct';
+                @apply bg-success-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2 dark:bg-success-500;
+            }
+        }
+
+        &.unanswered {
+            @apply bg-danger-50 border-danger-500 dark:bg-gray-800;
+            &:before {
+                content: 'Unanswered';
+                @apply bg-danger-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2 dark:bg-danger-500;
+            }
+        }
+        &.answered {
+            @apply bg-success-50 border-success-500 dark:bg-gray-800;
+            &:before {
+                content: 'Answered';
+                @apply bg-success-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2 dark:bg-success-500;
+            }
+        }
+
+        &.record-draft {
+            @apply bg-warning-50 border-warning-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Draft';
+                @apply bg-warning-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2;
+            }
+        }
+        &.record-processing {
+            @apply bg-info-50 border-info-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Processing';
+                @apply bg-info-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2;
+            }
+        }
+        &.record-submitted {
+            @apply bg-success-50 border-success-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Submitted';
+                @apply bg-success-500 dark:bg-success-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2;
+            }
+        }
+        &.record-posted {
+            @apply bg-success-50 border-success-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Posted';
+                @apply bg-success-500 dark:bg-success-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2;
+            }
+        }
+
+        &.record-confirmed {
+            @apply bg-success-50 border-success-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Confirmed';
+                @apply bg-success-500 dark:bg-success-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2;
+            }
+        }
+
+        &.record-closed {
+            @apply bg-danger-50 border-danger-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Closed';
+                @apply bg-danger-500 dark:bg-danger-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2;
+            }
+        }
+        &.record-cancelled {
+            @apply bg-danger-50 border-danger-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Cancelled';
+                @apply bg-danger-500 dark:bg-danger-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2;
+            }
+        }
+        &.record-approved {
+            @apply bg-success-50 border-success-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Approved';
+                @apply bg-success-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2;
+            }
+        }
+        &.record-rejected {
+            @apply bg-danger-50 border-danger-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Rejected';
+                @apply bg-danger-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2;
+            }
+        }
+        &.record-pending {
+            @apply bg-warning-50 border-warning-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Pending';
+                @apply bg-warning-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2;
+            }
+        }
+        &.record-completed {
+            @apply bg-success-50 border-success-500 dark:bg-gray-800;
+            &:before {
+                /*Show inactive text*/
+                content: 'Completed';
+                @apply bg-success-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-lg rounded-tr-none rounded-bl-none p-2;
+            }
+        }
+    }
+    .fi-ta-row {
+        &.inactive {
+            @apply bg-danger-50 border-danger-500 dark:bg-danger-50/20;
+            &:after {
+                /*Show inactive text*/
+                content: 'inactive';
+                @apply bg-danger-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-none rounded-bl-lg p-1 px-2;
+            }
+        }
+        &.active {
+            @apply bg-success-50 border-success-500 dark:bg-success-50/20;
+            &:after {
+                /*Show inactive text*/
+                content: 'active';
+                @apply bg-success-500 text-gray-900 dark:text-gray-100 text-xs font-bold rounded-none rounded-bl-lg p-1 px-2;
+            }
+        }
+    }
+    .folder {
+        @apply bg-origin-border bg-cover p-3 bg-no-repeat bg-center;
+        background-image: url('/svgs/folder-solid.svg');
+        &.folder-outlined {
+            background-image: url('/svgs/folder.svg');
+        }
+        &.folder-copy {
+            background-image: url('/svgs/folder-copy-solid.svg');
+            &.folder-outlined {
+                background-image: url('/svgs/folder-copy.svg');
+            }
+        }
+        &.folder-open {
+            background-image: url('/svgs/folder-open-solid.svg');
+            &.folder-outlined {
+                background-image: url('/svgs/folder-open.svg');
+            }
+        }
+    }
+}
