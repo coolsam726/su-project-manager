@@ -1,5 +1,6 @@
 {
     "Core": true,
     "Blog": true,
-    "Retail": true
+    "Retail": true,
+    "Projects": true
 }
