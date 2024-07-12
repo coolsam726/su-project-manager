@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreignId('milestone_id')->nullable()->constrained('milestones')->nullOnDelete();
             $table->json('labels')->default('[]');
             $table->json('todos')->default('[]');
+            $table->string('status')->default(\Modules\Projects\Support\Enums\ProjectStatus::Backlog->value);
             $table->active();
             $table->audit();
             $table->float('progress')->default(0);

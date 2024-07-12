@@ -10,6 +10,7 @@
     "require": {
         "php": "^8.2",
         "abdelhamiderrahmouni/filament-monaco-editor": "^0.2.3",
+        "awcodes/filament-table-repeater": "^3.0",
         "bezhansalleh/filament-language-switch": "*",
         "bezhansalleh/filament-shield": "^3.2",
         "coolsam/modules": "^4.0",
