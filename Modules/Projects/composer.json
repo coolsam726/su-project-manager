@@ -26,5 +26,8 @@
         "psr-4": {
             "Modules\\Projects\\Tests\\": "tests/"
         }
+    },
+    "require": {
+        "mokhosh/filament-kanban": "^2.8"
     }
 }
