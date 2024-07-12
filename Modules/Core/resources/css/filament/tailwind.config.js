@@ -7,6 +7,7 @@ export default {
         '../*/app/**/*.php',
         './resources/views/filament/**/*.blade.php',
         '../../vendor/filament/**/*.blade.php',
+        '../../vendor/awcodes/filament-table-repeater/**/*.blade.php',
     ],
     plugins: [
         forms,
