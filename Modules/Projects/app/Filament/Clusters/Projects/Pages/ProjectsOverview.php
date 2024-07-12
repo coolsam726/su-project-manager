@@ -27,9 +27,9 @@ class ProjectsOverview extends KanbanBoard implements HasActions
     protected static string $model = Project::class;
     protected static string $statusEnum = ProjectStatus::class;
 
-    protected static string $view = 'projects::kanban';
+    protected static string $view = 'projects::project-overview-kanban';
 
-    protected array $filters = [
+    public array $filters = [
         'department_id' => null,
         'include_descendants' => false,
     ];
@@ -97,6 +97,9 @@ class ProjectsOverview extends KanbanBoard implements HasActions
             ->form([
                 TextInput::make('title')->required(),
                 RichEditor::make('description')->nullable(),
+                Select::make('department_id')->label('Department')->default($this->filters['department_id'] ?: null)->options(
+                    Department::query()->whereIsActive(true)->pluck('name', 'id')->toArray()
+                )->searchable(),
                 Select::make('status')
                     ->searchable()
                     ->default(ProjectStatus::Backlog->value)
@@ -107,6 +110,7 @@ class ProjectsOverview extends KanbanBoard implements HasActions
                 $record = new Project();
                 $record->title = $data['title'];
                 $record->description = $data['description'];
+                $record->department_id = $data['department_id'];
                 $record->status = $data['status'];
                 $record->start_date = now()->toDate();
                 $record->due_date = now()->addMonth()->toDate();
@@ -124,8 +128,7 @@ class ProjectsOverview extends KanbanBoard implements HasActions
                 ->label('Department')
                 ->placeholder('Select Department')
                 ->helperText('clear this if you would like to see all projects under the current team.')
-                ->required()
-                ->default($this->filters['department_id'])
+                ->default($this->filters['department_id'] ?: null)
                 ->options(Department::query()
                     ->whereIsActive(true)
                     ->pluck('name', 'id')
@@ -141,6 +144,13 @@ class ProjectsOverview extends KanbanBoard implements HasActions
             $this->setDepartmentFilter( intval($data['department_id']) ?? null);
             $this->setIncludeDescendantsFilter( boolval($data['include_descendants']) ?? false);
         });
+    }
+
+    public function getDepartmentPageHeading() {
+        if (!$this->filters['department_id']) {
+            return __('All Departments');
+        }
+        return Department::find($this->filters['department_id'])?->name ?? __('All Departments');
     }
 
 }
