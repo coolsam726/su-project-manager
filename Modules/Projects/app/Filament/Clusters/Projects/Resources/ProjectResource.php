@@ -39,7 +39,7 @@ class ProjectResource extends Resource
                     ->relationship('department', 'name')
                     ->default(null)->columnSpanFull(),
                 Forms\Components\DatePicker::make('start_date')->native(false),
-                Forms\Components\DatePicker::make('end_date')->native(false),
+                Forms\Components\DatePicker::make('due_date')->native(false),
                 Forms\Components\TextInput::make('color')
                     ->maxLength(255)
                     ->default(null),
