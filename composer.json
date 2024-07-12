@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "abdelhamiderrahmouni/filament-monaco-editor": "^0.2.3",
         "bezhansalleh/filament-language-switch": "*",
         "bezhansalleh/filament-shield": "^3.2",
         "coolsam/modules": "^4.0",
@@ -19,7 +20,12 @@
         "laravel/reverb": "@beta",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
-        "spatie/laravel-activitylog": "^4.8"
+        "mokhosh/filament-kanban": "^2.8",
+        "spatie/eloquent-sortable": "^4.4",
+        "spatie/laravel-activitylog": "^4.8",
+        "spatie/laravel-markdown": "^2.5",
+        "spatie/laravel-model-states": "^2.7",
+        "wiebenieuwenhuis/filament-code-editor": "^1.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
