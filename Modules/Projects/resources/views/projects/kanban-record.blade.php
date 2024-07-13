@@ -20,8 +20,8 @@
         "
         @endif
 >
-    <div class="flex justify-between flex-wrap">
-        <div class="font-semibold">{{ $record->{static::$recordTitleAttribute} }}</div>
+    <div class="flex justify-between">
+        <div class="font-semibold flex-1">{{ $record->{static::$recordTitleAttribute} }}</div>
         <div class="flex items center">
             @if($record->status === 'DONE')
                 <svg class="size-8" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"

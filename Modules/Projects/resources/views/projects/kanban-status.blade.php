@@ -1,6 +1,6 @@
 @props(['status'])
 
-<div class="md:w-[24rem] first:ml-8 last:mr-8 flex-shrink-0 mb-5 md:min-h-full flex flex-col rounded-xl bg-gray-200 dark:bg-gray-800">
+<div class="md:w-[24rem] md:first:ml-8 md:last:mr-8 max-sm:mx-3 flex-shrink-0 mb-5 md:min-h-full flex flex-col rounded-xl bg-gray-200 dark:bg-gray-800">
     @include(static::$headerView)
 
     <div
