@@ -6,11 +6,5 @@ enum ProjectStatus: string
     case Backlog = 'BACKLOG';
     case TODO = 'TODO';
     case InProgress = 'IN_PROGRESS';
-
-    case Reviewing = 'REVIEW_IN_PROGRESS';
-
-    case Blocked = 'BLOCKED';
     case Done = 'DONE';
-
-    case Closed = 'CLOSED';
 }

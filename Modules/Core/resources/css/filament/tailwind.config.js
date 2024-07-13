@@ -5,6 +5,7 @@ export default {
     presets: [preset],
     content: [
         '../*/app/**/*.php',
+        '../*/resources/**/*.php',
         './resources/views/filament/**/*.blade.php',
         '../../vendor/filament/**/*.blade.php',
         '../../vendor/awcodes/filament-table-repeater/**/*.blade.php',

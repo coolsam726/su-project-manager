@@ -12,6 +12,12 @@
 
     .fi-body {
         @apply !bg-primary-50 dark:!bg-gray-800;
+        .fi-layout {
+            @apply min-h-[calc(100vh-2rem)];
+        }
+    }
+    .fi-page > section {
+        @apply !gap-y-0 !py-0
     }
 
     .fi-sidebar-item, .fi-topbar-item {
